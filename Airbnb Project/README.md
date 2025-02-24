@@ -196,7 +196,7 @@ FROM src_hosts
 ```
 
 This is how the folder structure should look like now:
-<img width="286" alt="Screenshot 2023-10-19 at 3 06 43 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/a1ff5342-e38f-41c0-8aa1-9b65f09b49a0">
+<img width="286" alt="Screenshot 2023-10-19 at 3 06 43 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/a1ff5342-e38f-41c0-8aa1-9b65f09b49a0">
 
 ## 3) Create Fct Models
 
@@ -232,7 +232,7 @@ WHERE review_text IS NOT NULL
 {% endif %}
 ```
 
-<img width="840" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/8be2fed5-23e4-4a68-b928-8c705616f5e8">
+<img width="840" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/8be2fed5-23e4-4a68-b928-8c705616f5e8">
 
 **`dim_listings_w_hosts.sql`**
 
@@ -269,10 +269,10 @@ LEFT JOIN hosts AS h
 ```
 
 Now that all the models are created, we changed the materialisation of source models (ie. `src_hosts`, `src_listings`, and `src_reviews`) to ephemeral in `dbt_project.yml` so that it will be materialised as a CTE and will not appear in the **Dev** folder in Snowflake. 
-<img width="1436" alt="Screenshot 2023-10-19 at 4 15 05 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/55d78ff3-ac33-43aa-aa45-b24ef619dbaf">
+<img width="1436" alt="Screenshot 2023-10-19 at 4 15 05 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/55d78ff3-ac33-43aa-aa45-b24ef619dbaf">
 
 dbt does not remove them as views, so we'll need to drop them in Snowflake.
-<img width="1436" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/8e5a69a1-5d64-47af-a125-6e31b26ca188">
+<img width="1436" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/8e5a69a1-5d64-47af-a125-6e31b26ca188">
 
 ## 4) Uploading CSV from S3
 
@@ -284,10 +284,10 @@ curl https://dbtlearn.s3.us-east-2.amazonaws.com/seed_full_moon_dates.csv -o see
 
 Then, run `dbt seed` to populate the CSV as a Table in Snowflake.
 
-<img width="968" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/6e0373d4-9337-4688-a7cb-bc518db1224a">
+<img width="968" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/6e0373d4-9337-4688-a7cb-bc518db1224a">
 
 The `seed_full_moon_dates.csv` is updated in Snowflake.
-<img width="1436" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/2ad8b9de-a4c8-4a64-9bb1-ba6f25efff08">
+<img width="1436" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/2ad8b9de-a4c8-4a64-9bb1-ba6f25efff08">
 
 ***
 
@@ -296,7 +296,7 @@ The `seed_full_moon_dates.csv` is updated in Snowflake.
 Instead of referencing the exact table in Snowflake, we create a `source.yml` which contains the references of the Snowflake table and give it an alias which we can use in dbt.
 
 Create a `source.yml` in `/models` folder.
-<img width="1436" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/150d33e1-9895-40b8-80ea-490655c3910f">
+<img width="1436" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/150d33e1-9895-40b8-80ea-490655c3910f">
 
 Update the models which are using the exact table reference. For example, in the `src_hosts.sql` model, I update
 
@@ -338,7 +338,7 @@ FROM RAW_HOSTS
 To view the compiled models (.sql) in dbt, go to `target/compiled/dbtlearn/models/[dim/fct/src].sql`.
 
 Here's a sample of a compiled model (`dim_hosts_cleansed.sql`):
-<img width="1436" alt="Screenshot 2023-10-19 at 4 21 48 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/28524691-7fe5-4007-b677-9ff327455be8">
+<img width="1436" alt="Screenshot 2023-10-19 at 4 21 48 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/28524691-7fe5-4007-b677-9ff327455be8">
 
 Can copy and run in Snowflake for debugging purposes.
 
@@ -359,10 +359,10 @@ models:
 
 Run `dbt run` and refresh Snowflake for the changes to take place.
 
-<img width="885" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/e209389f-24db-4814-a061-a3e83a2d83d1">
+<img width="885" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/e209389f-24db-4814-a061-a3e83a2d83d1">
 
 You will not see src models in Snowflake as they are ephemeral materialisations and will not appear in Snowflake.
-<img width="1436" alt="Screenshot 2023-10-19 at 5 45 46 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/67b75619-40ac-4393-9592-6aa67cd49988">
+<img width="1436" alt="Screenshot 2023-10-19 at 5 45 46 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/67b75619-40ac-4393-9592-6aa67cd49988">
 
 ### Snapshots
 

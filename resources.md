@@ -9,7 +9,7 @@
 
 ### 2. SQL
 
-Refer to my list of SQL resources under ["Where to Learn SQL"](https://github.com/katiehuangx/Transition-into-Data-Analytics?tab=readme-ov-file#-where-to-learn-sql).
+Refer to my list of SQL resources under ["Where to Learn SQL"](https://github.com/SatthikGhosh/Transition-into-Data-Analytics?tab=readme-ov-file#-where-to-learn-sql).
 
 ## Data Processing and ETL
 
