@@ -73,32 +73,32 @@ Link to the script: [https://github.com/SatthikGhosh/data-engineering/blob/main/
 
 After completing the above steps, I created the following fact and dimension tables below:
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 05 21 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/d1f961f5-dd28-4a5f-bfc9-1d739b85012c">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 05 21 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/d1f961f5-dd28-4a5f-bfc9-1d739b85012c">
 
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 05 29 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/3265a206-132f-457f-8323-2c6f681fbf60">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 05 29 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/3265a206-132f-457f-8323-2c6f681fbf60">
 
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 05 35 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/a0555798-32a7-4c84-ac19-6336868dbf70">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 05 35 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/a0555798-32a7-4c84-ac19-6336868dbf70">
 
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 05 40 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/f7483917-b5eb-400f-a9ea-8ca138db6604">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 05 40 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/f7483917-b5eb-400f-a9ea-8ca138db6604">
 
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 05 44 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/31fc871f-bdd3-4d2b-a0b5-04227188ec66">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 05 44 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/31fc871f-bdd3-4d2b-a0b5-04227188ec66">
 
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 05 53 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/ec020455-bb23-4be5-b3f9-92200ccebaae">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 05 53 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/ec020455-bb23-4be5-b3f9-92200ccebaae">
 
 ## Step 2: Storage
 
-<img width="1436" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/b776b804-a871-4a72-b1e5-b38b6d194bf3">
+<img width="1436" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/b776b804-a871-4a72-b1e5-b38b6d194bf3">
 
 ## Step 3: ETL / Orchestration
 
 1. Begin by launching the SSH instance and running the following commands below to install the required libraries.
 
-<img width="1436" alt="Screenshot 2023-09-03 at 4 10 39 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/1bd9af4c-61aa-4ea5-a485-81b6a6b5d446">
+<img width="1436" alt="Screenshot 2023-09-03 at 4 10 39 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/1bd9af4c-61aa-4ea5-a485-81b6a6b5d446">
 
 ```python
 # Install python and pip 
@@ -123,7 +123,7 @@ sudo pip3 install google-cloud-bigquery
 sudo pip3 install pandas
 ```
 
-<img width="1436" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/3ce67bf1-b965-428e-8412-1efd3ce0c95f">
+<img width="1436" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/3ce67bf1-b965-428e-8412-1efd3ce0c95f">
 
 2. After that, I install the Mage AI library from the [Mage AI GitHub](https://github.com/mage-ai/mage-ai#using-pip-or-conda). Then, I create a new project called "uber_de_project".
 
@@ -135,7 +135,7 @@ sudo pip3 install mage-ai
 mage start demo_project
 ```
 
-<img width="901" alt="Screenshot 2023-09-03 at 3 43 27 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/2cfbdda6-4998-4dff-8c09-2f76c9b8a977">
+<img width="901" alt="Screenshot 2023-09-03 at 3 43 27 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/2cfbdda6-4998-4dff-8c09-2f76c9b8a977">
 
 3. Next, I conduct orchestration in Mage by accessing the external IP address through a new tab. The link format is: `<external IP address>:<port number>`.
 
@@ -144,7 +144,7 @@ After that, I create a new pipeline with the following stages:
 - Transform: [transform_uber](https://github.com/SatthikGhosh/data-engineering/blob/main/Uber%20Project/Mage/uber_transformation.py)
 - Load: [load_gbq](https://github.com/SatthikGhosh/data-engineering/blob/main/Uber%20Project/Mage/uber_load_data.py)
 
-<img width="1438" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/ae8acb39-c66e-41f6-b81b-d1179121c0a4">
+<img width="1438" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/ae8acb39-c66e-41f6-b81b-d1179121c0a4">
 
 Before executing the Load pipeline, I download credentials from Google API & Credentials and then update them accordingly in the `io_config.yaml` file within the same pipeline. This step is essential for granting authorization to access and load data into Google BigQuery.
 
@@ -152,17 +152,17 @@ Before executing the Load pipeline, I download credentials from Google API & Cre
 
 After running the Load pipeline in Mage, the fact and dim tables are generated in Google BigQuery.
 
-<img width="1438" alt="Screenshot 2023-09-03 at 3 41 57 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/81106f7c-f912-462a-ba74-4b1e22120dc6">
+<img width="1438" alt="Screenshot 2023-09-03 at 3 41 57 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/81106f7c-f912-462a-ba74-4b1e22120dc6">
 
 Here's the additional analyses I performed:
 1. Find the top 10 pickup locations based on the number of trips
-<img width="1436" alt="Screenshot 2023-09-03 at 3 46 17 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/87fef0c1-f849-4b0e-8f2d-db68a989a06d">
+<img width="1436" alt="Screenshot 2023-09-03 at 3 46 17 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/87fef0c1-f849-4b0e-8f2d-db68a989a06d">
 
 2. Find the total number of trips by passenger count:
-<img width="1436" alt="Screenshot 2023-09-03 at 3 47 48 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/5f563142-9d18-4019-8499-7d9958b7ec05">
+<img width="1436" alt="Screenshot 2023-09-03 at 3 47 48 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/5f563142-9d18-4019-8499-7d9958b7ec05">
 
 3. Find the average fare amount by hour of the day:
-<img width="1436" alt="Screenshot 2023-09-03 at 3 48 52 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/bf8d4dea-0915-48fb-a673-e5b3d3f37e3f">
+<img width="1436" alt="Screenshot 2023-09-03 at 3 48 52 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/bf8d4dea-0915-48fb-a673-e5b3d3f37e3f">
 
 ## Step 5: Dashboard
 
