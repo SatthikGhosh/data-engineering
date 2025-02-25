@@ -196,7 +196,7 @@ FROM src_hosts
 ```
 
 This is how the folder structure should look like now:
-<img width="286" alt="Screenshot 2023-10-19 at 3 06 43 PM" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/a1ff5342-e38f-41c0-8aa1-9b65f09b49a0">
+<img width="286" alt="Screenshot 2023-10-19 at 3 06 43 PM" src="https://github.com/katiehuangx/data-engineering/assets/81607668/a1ff5342-e38f-41c0-8aa1-9b65f09b49a0">
 
 ## 3) Create Fct Models
 
