@@ -69,7 +69,7 @@ Here's the specific cleaning and transformation tasks that were performed:
 
 Link to the script: [https://github.com/SatthikGhosh/data-engineering/blob/main/Uber%20Project/Uber%20Data%20Engineering.ipynb](https://github.com/SatthikGhosh/data-engineering/blob/main/Uber%20Project/Uber%20Data%20Engineering.ipynb)
 
-<img width="1436" alt="image" src="https://github.com/SatthikGhosh/data-engineering/assets/81607668/83438f14-cae0-4278-8a33-5b536b487d90">
+<img width="1436" alt="image" src="https://github.com/katiehuangx/data-engineering/assets/81607668/83438f14-cae0-4278-8a33-5b536b487d90">
 
 After completing the above steps, I created the following fact and dimension tables below:
 
